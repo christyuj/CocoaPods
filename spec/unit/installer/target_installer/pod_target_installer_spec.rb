@@ -127,7 +127,7 @@ module Pod
           @installer.install!
           bundle_target = @project.targets.find { |t| t.name == 'Pods-BananaLib-banana_bundle' }
 
-          file = config.sandbox.root + @pod_target.xcconfig_private_path
+          file = config.sandbox.root + @pod_target.xcconfig_path
           bundle_target.build_configurations.each do |bc|
             bc.base_configuration_reference.real_path.should == file
           end
@@ -169,7 +169,7 @@ module Pod
           @installer.install!
           bundle_target = @project.targets.find { |t| t.name == 'BananaLib-banana_bundle' }
 
-          file = config.sandbox.root + @pod_target.xcconfig_private_path
+          file = config.sandbox.root + @pod_target.xcconfig_path
           bundle_target.build_configurations.each do |bc|
             bc.base_configuration_reference.real_path.should == file
           end
@@ -180,7 +180,7 @@ module Pod
 
       it 'creates the xcconfig file' do
         @installer.install!
-        file = config.sandbox.root + @pod_target.xcconfig_private_path
+        file = config.sandbox.root + @pod_target.xcconfig_path
         xcconfig = Xcodeproj::Config.new(file)
         xcconfig.to_hash['PODS_ROOT'].should == '${SRCROOT}'
       end
