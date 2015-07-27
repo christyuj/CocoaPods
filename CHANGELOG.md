@@ -6,6 +6,13 @@ To install release candidates run `[sudo] gem install cocoapods --pre`
 
 ## 0.38.2
 
+##### Enhancements
+
+* Collapse the namespaced public and private pod xcconfig into one single
+  xcconfig file.  
+  [Marius Rackwitz](https://github.com/mrackwitz)
+  [#3916](https://github.com/CocoaPods/CocoaPods/pull/3916)
+
 ##### Bug Fixes
 
 * Fix generation of xcconfig files that specify both `-iquote` and `-isystem`
