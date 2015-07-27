@@ -15,6 +15,11 @@ To install release candidates run `[sudo] gem install cocoapods --pre`
 
 ##### Bug Fixes
 
+* Build settings specified in `pod_target_xcconfig` of a spec are also for
+  library targets only applied to the pod target.  
+  [Marius Rackwitz](https://github.com/mrackwitz)
+  [#3906](https://github.com/CocoaPods/CocoaPods/issues/3906)
+
 * Fix generation of xcconfig files that specify both `-iquote` and `-isystem`
   headers.  
   [Russ Bishop](https://github.com/russbishop)
